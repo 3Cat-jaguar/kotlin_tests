@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">05_layout</string>
+    <string-array name="building_list">
+        <item> 100주년기념박물관</item>
+        <item> 100주년중앙도서관</item>
+        <item> 공관</item>
+        <item> 교육관 A동</item>
+        <item> 교육관 B동</item>
+        <item> 국제교육관</item>
+        <item> 다락방</item>
+        <item> 대강당</item>
+        <item> 대학교회</item>
+        <item> 대학원기숙사A동</item>
+        <item> 대학원기숙사B동</item>
+        <item> 대학원별관</item>
+        <item> 대학원관</item>
+        <item> 법인행정동</item>
+        <item> 법학관</item>
+        <item> 본관</item>
+        <item> 부속이화·금란고등학교</item>
+        <item> 부속이화·금란중학교</item>
+        <item> 부속유치원</item>
+        <item> 부속초등학교</item>
+    </string-array>
+</resources>

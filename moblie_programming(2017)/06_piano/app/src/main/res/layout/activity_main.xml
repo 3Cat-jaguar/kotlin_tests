@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.nyanyajaguar.a06_piano.MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/keyboard"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <LinearLayout
+        android:layout_width="87dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintHorizontal_bias="0.26"
+        android:layout_marginTop="0dp">
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/color_btn"
+            android:onClick="key0"
+            android:text="도"
+            android:textAlignment="viewStart"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="7dp" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/color_btn"
+            android:onClick="key1"
+            android:text="레"
+            android:textAlignment="viewStart"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="70dp" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/color_btn"
+            android:onClick="key2"
+            android:text="미"
+            android:textAlignment="viewStart"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="135dp" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/color_btn"
+            android:onClick="key3"
+            android:text="파"
+            android:textAlignment="viewStart"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="194dp" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/color_btn"
+            android:onClick="key4"
+            android:text="솔"
+            android:textAlignment="viewStart"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="260dp" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/color_btn"
+            android:onClick="key5"
+            android:text="라"
+            android:textAlignment="viewStart"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="324dp" />
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/color_btn"
+            android:onClick="key6"
+            android:text="시"
+            android:textAlignment="viewStart"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="390dp" />
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/color_btn"
+            android:onClick="key7"
+            android:text="도"
+            android:textAlignment="viewStart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="84dp" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

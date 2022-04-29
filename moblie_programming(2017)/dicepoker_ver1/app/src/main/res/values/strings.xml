@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">dicepoker_ver1</string>
+    <string name="money">%1$s %2$d  G</string>
+</resources>

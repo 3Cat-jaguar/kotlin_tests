@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.nyanyajaguar.dicepoker_ver1.START"
+    tools:layout_editor_absoluteY="0dp"
+    tools:layout_editor_absoluteX="0dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginTop="4dp"
+            android:onClick="notice_in"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_menu_help" />
+
+        <ImageView
+            android:id="@+id/p1_pic"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/p1_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/profilepic" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@android:color/transparent"
+            android:onClick="select_photo1"
+            app:layout_constraintStart_toStartOf="@+id/p1_pic"
+            app:layout_constraintTop_toTopOf="@+id/p1_pic" />
+
+        <EditText
+            android:id="@+id/p1_name"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="88dp"
+            android:layout_marginStart="88dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Player1 이름을 입력하세요"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/p1_pic"
+            tools:layout_editor_absoluteY="173dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DICE POKER"
+            android:textColor="@android:color/black"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteY="233dp"
+            tools:layout_editor_absoluteX="59dp"
+            app:layout_constraintTop_toBottomOf="@+id/p1_name"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintBottom_toTopOf="@+id/start"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="go_game"
+            android:text="play"
+            tools:layout_editor_absoluteY="327dp"
+            tools:layout_editor_absoluteX="148dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintBottom_toTopOf="@+id/p2_pic"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/p2_pic"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginStart="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/p2_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/start"
+            app:srcCompat="@drawable/profilepic"
+            tools:layout_editor_absoluteX="142dp"
+            tools:layout_editor_absoluteY="403dp" />
+
+        <Button
+            android:id="@+id/newbutton2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@android:color/transparent"
+            android:onClick="select_photo2"
+            app:layout_constraintStart_toStartOf="@+id/p2_pic"
+            app:layout_constraintTop_toTopOf="@+id/p2_pic" />
+
+        <EditText
+            android:id="@+id/p2_name"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="88dp"
+            android:layout_marginStart="88dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Player2 이름을 입력하세요"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/p2_pic"
+            tools:layout_editor_absoluteY="532dp" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/start_notice"
+        android:layout_width="321dp"
+        android:layout_height="458dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="#ffaaaaaa"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="right"
+                android:onClick="notice_out"
+                app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:background="@android:color/background_light"
+                app:srcCompat="@drawable/picture8" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                app:srcCompat="@android:color/transparent" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="위 그림을 누르면 프로필 생성이 가능합니다"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                app:srcCompat="@android:color/transparent" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:text="play"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/p2_pic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2"
+                tools:layout_editor_absoluteY="312dp" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                app:srcCompat="@android:color/transparent" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="player1, player2의 프로필이 모두 생성 후 \nplay 버튼을 누르면 게임화면으로 넘어갑니다"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

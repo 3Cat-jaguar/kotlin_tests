@@ -1,0 +1,1395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.nyanyajaguar.dicepoker_ver1.GAME"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/player1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/playertab"
+        app:layout_constraintBottom_toTopOf="@+id/bet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/help"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:onClick="game_notice_in"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_menu_help" />
+
+        <ImageView
+            android:id="@+id/p1_g_pic"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:srcCompat="@drawable/picture8"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/p1_g_name"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:id="@+id/p1_g_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="player1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteY="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/p1_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:text="Let's Dice Poker"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/p1_g_name" />
+
+        <Button
+            android:id="@+id/p1_roll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            android:onClick="roll"
+            android:text="roll"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/p1_g_name" />
+
+        <view
+            android:id="@+id/p1_dice1"
+            class="com.nyanyajaguar.dicepoker_ver1.dice"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/background0"
+            app:layout_constraintEnd_toStartOf="@+id/p1_dice2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/p1_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/p1button1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@android:color/transparent"
+            android:onClick="p1_sel1"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="@id/p1_dice1"
+            app:layout_constraintTop_toTopOf="@id/p1_dice1" />
+
+        <view
+            android:id="@+id/p1_dice2"
+            class="com.nyanyajaguar.dicepoker_ver1.dice"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/background0"
+            app:layout_constraintEnd_toStartOf="@+id/p1_dice3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/p1_dice1"
+            app:layout_constraintTop_toBottomOf="@+id/p1_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/p1button2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@android:color/transparent"
+            android:onClick="p1_sel2"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="@id/p1_dice2"
+            app:layout_constraintTop_toTopOf="@id/p1_dice2" />
+
+        <view
+            android:id="@+id/p1_dice3"
+            class="com.nyanyajaguar.dicepoker_ver1.dice"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/background0"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toStartOf="@+id/p1_dice4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/p1_dice2"
+            app:layout_constraintTop_toBottomOf="@+id/p1_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="16dp" />
+
+        <view
+            android:id="@+id/entangled3_1_1"
+            class="com.nyanyajaguar.dicepoker_ver1.dice"
+            id="@+id/view"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/background0"
+            app:layout_constraintStart_toStartOf="@+id/p1button3"
+            app:layout_constraintTop_toTopOf="@+id/p1button3" />
+
+        <view
+            android:id="@+id/entangled3_2_1"
+            class="com.nyanyajaguar.dicepoker_ver1.dice"
+            id="@+id/view"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginEnd="0dp"
+            android:background="@drawable/background0"
+            app:layout_constraintBottom_toBottomOf="@+id/p1button3"
+            app:layout_constraintEnd_toEndOf="@+id/p1button3" />
+
+        <Button
+            android:id="@+id/p1button3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@android:color/transparent"
+            android:onClick="p1_sel3"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="@id/p1_dice3"
+            app:layout_constraintTop_toTopOf="@id/p1_dice3" />
+
+        <view
+            android:id="@+id/p1_dice4"
+            class="com.nyanyajaguar.dicepoker_ver1.dice"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/background0"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toStartOf="@+id/p1_dice5"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/p1_dice3"
+            app:layout_constraintTop_toBottomOf="@+id/p1_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="16dp" />
+
+        <view
+            android:id="@+id/entangled4_1_1"
+            class="com.nyanyajaguar.dicepoker_ver1.dice"
+            id="@+id/view"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/background0"
+            app:layout_constraintStart_toStartOf="@+id/p1button4"
+            app:layout_constraintTop_toTopOf="@+id/p1button4" />
+
+        <view
+            android:id="@+id/entangled4_2_1"
+            class="com.nyanyajaguar.dicepoker_ver1.dice"
+            id="@+id/view"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginEnd="0dp"
+            android:background="@drawable/background0"
+            app:layout_constraintBottom_toBottomOf="@+id/p1button4"
+            app:layout_constraintEnd_toEndOf="@+id/p1button4" />
+
+        <Button
+            android:id="@+id/p1button4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@android:color/transparent"
+            android:onClick="p1_sel4"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="@id/p1_dice4"
+            app:layout_constraintTop_toTopOf="@id/p1_dice4" />
+
+        <view
+            android:id="@+id/p1_dice5"
+            class="com.nyanyajaguar.dicepoker_ver1.dice"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/background0"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/p1_dice4"
+            app:layout_constraintTop_toBottomOf="@+id/p1_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="16dp" />
+
+        <view
+            android:id="@+id/entangled5_1_1"
+            class="com.nyanyajaguar.dicepoker_ver1.dice"
+            id="@+id/view"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/background0"
+            app:layout_constraintStart_toStartOf="@+id/p1button5"
+            app:layout_constraintTop_toTopOf="@+id/p1button5" />
+
+        <view
+            android:id="@+id/entangled5_2_1"
+            class="com.nyanyajaguar.dicepoker_ver1.dice"
+            id="@+id/view"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginEnd="0dp"
+            android:background="@drawable/background0"
+            app:layout_constraintBottom_toBottomOf="@+id/p1button5"
+            app:layout_constraintEnd_toEndOf="@+id/p1button5" />
+
+        <Button
+            android:id="@+id/p1button5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@android:color/transparent"
+            android:onClick="p1_sel5"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="@id/p1_dice5"
+            app:layout_constraintTop_toTopOf="@id/p1_dice5" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/bet"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/player2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player1">
+
+        <TextView
+            android:id="@+id/frame"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/frame2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/frame"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/player2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/playertab"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bet"
+        tools:layout_editor_absoluteY="426dp">
+
+        <ImageView
+            android:id="@+id/p2_g_pic"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:srcCompat="@drawable/picture8"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/p2_g_name"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:id="@+id/p2_g_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="16dp"
+            android:text="player2"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="32dp" />
+
+        <TextView
+            android:id="@+id/p2_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:text="Let's Dice Poker"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/p2_g_name" />
+
+        <Button
+            android:id="@+id/p2_roll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            android:onClick="roll2"
+            android:text="roll"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/p2_g_name" />
+
+        <view
+            android:id="@+id/p2_dice1"
+            class="com.nyanyajaguar.dicepoker_ver1.dice"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/background0"
+            app:layout_constraintEnd_toStartOf="@+id/p2_dice2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/p2_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/p2button1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@android:color/transparent"
+            android:onClick="p2_sel1"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="@id/p2_dice1"
+            app:layout_constraintTop_toTopOf="@id/p2_dice1" />
+
+        <view
+            android:id="@+id/p2_dice2"
+            class="com.nyanyajaguar.dicepoker_ver1.dice"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/background0"
+            app:layout_constraintEnd_toStartOf="@+id/p2_dice3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/p2_dice1"
+            app:layout_constraintTop_toBottomOf="@+id/p2_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/p2button2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@android:color/transparent"
+            android:onClick="p2_sel2"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="@id/p2_dice2"
+            app:layout_constraintTop_toTopOf="@id/p2_dice2" />
+
+        <view
+            android:id="@+id/p2_dice3"
+            class="com.nyanyajaguar.dicepoker_ver1.dice"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/background0"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toStartOf="@+id/p2_dice4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/p2_dice2"
+            app:layout_constraintTop_toBottomOf="@+id/p2_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="16dp" />
+
+        <view
+            android:id="@+id/entangled3_1_2"
+            class="com.nyanyajaguar.dicepoker_ver1.dice"
+            id="@+id/view"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/background0"
+            app:layout_constraintStart_toStartOf="@+id/p2button3"
+            app:layout_constraintTop_toTopOf="@+id/p2button3" />
+
+        <view
+            android:id="@+id/entangled3_2_2"
+            class="com.nyanyajaguar.dicepoker_ver1.dice"
+            id="@+id/view"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginEnd="0dp"
+            android:background="@drawable/background0"
+            app:layout_constraintBottom_toBottomOf="@+id/p2button3"
+            app:layout_constraintEnd_toEndOf="@+id/p2button3" />
+
+        <Button
+            android:id="@+id/p2button3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@android:color/transparent"
+            android:onClick="p2_sel3"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="@id/p2_dice3"
+            app:layout_constraintTop_toTopOf="@id/p2_dice3" />
+
+        <view
+            android:id="@+id/p2_dice4"
+            class="com.nyanyajaguar.dicepoker_ver1.dice"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/background0"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toStartOf="@+id/p2_dice5"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/p2_dice3"
+            app:layout_constraintTop_toBottomOf="@+id/p2_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="16dp" />
+
+        <view
+            android:id="@+id/entangled4_1_2"
+            class="com.nyanyajaguar.dicepoker_ver1.dice"
+            id="@+id/view"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/background0"
+            app:layout_constraintStart_toStartOf="@+id/p2button4"
+            app:layout_constraintTop_toTopOf="@+id/p2button4" />
+
+        <view
+            android:id="@+id/entangled4_2_2"
+            class="com.nyanyajaguar.dicepoker_ver1.dice"
+            id="@+id/view"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginEnd="0dp"
+            android:background="@drawable/background0"
+            app:layout_constraintBottom_toBottomOf="@+id/p2button4"
+            app:layout_constraintEnd_toEndOf="@+id/p2button4" />
+
+        <Button
+            android:id="@+id/p2button4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@android:color/transparent"
+            android:onClick="p2_sel4"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="@id/p2_dice4"
+            app:layout_constraintTop_toTopOf="@id/p2_dice4" />
+
+        <view
+            android:id="@+id/p2_dice5"
+            class="com.nyanyajaguar.dicepoker_ver1.dice"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/background0"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/p2_dice4"
+            app:layout_constraintTop_toBottomOf="@+id/p2_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="16dp" />
+
+        <view
+            android:id="@+id/entangled5_1_2"
+            class="com.nyanyajaguar.dicepoker_ver1.dice"
+            id="@+id/view"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/background0"
+            app:layout_constraintStart_toStartOf="@+id/p2button5"
+            app:layout_constraintTop_toTopOf="@+id/p2button5" />
+
+        <view
+            android:id="@+id/entangled5_2_2"
+            class="com.nyanyajaguar.dicepoker_ver1.dice"
+            id="@+id/view"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginEnd="0dp"
+            android:background="@drawable/background0"
+            app:layout_constraintBottom_toBottomOf="@+id/p2button5"
+            app:layout_constraintEnd_toEndOf="@+id/p2button5" />
+
+        <Button
+            android:id="@+id/p2button5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@android:color/transparent"
+            android:onClick="p2_sel5"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="@id/p2_dice5"
+            app:layout_constraintTop_toTopOf="@id/p2_dice5" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <ScrollView
+        android:id="@+id/bettingbox1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="0dp"
+        android:background="#ffaaaaaa"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                app:srcCompat="@android:color/transparent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="참가비"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView25"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                app:srcCompat="@android:color/transparent" />
+
+            <TextView
+                android:id="@+id/b_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="player1 ,  참가비를 내주세요"
+                android:textAlignment="center" />
+
+            <ImageView
+                android:id="@+id/imageView26"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                app:srcCompat="@android:color/transparent" />
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/p1_b_100"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:onClick="p1_100"
+                    android:text="100G"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@+id/p1_b_200"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/p1_b_200"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:onClick="p1_200"
+                    android:text="200G"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@+id/p1_b_500"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/p1_b_100"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/p1_b_500"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:onClick="p1_500"
+                    android:text="500G"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@+id/p1_b_giveup"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/p1_b_200"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/p1_b_giveup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:onClick="p1_giveup"
+                    android:text="포기"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/p1_b_500"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/p2_b_go"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:onClick="p2_go"
+                    android:text="+   0 G"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintEnd_toStartOf="@+id/p2_b_100"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="8dp" />
+
+                <Button
+                    android:id="@+id/p2_b_100"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:onClick="p2_100"
+                    android:text="+ 100G"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toEndOf="@+id/p2_b_go"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintEnd_toStartOf="@+id/p2_b_200"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="8dp" />
+
+                <Button
+                    android:id="@+id/p2_b_200"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:onClick="p2_200"
+                    android:text="+ 200G"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toEndOf="@+id/p2_b_100"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintEnd_toStartOf="@+id/p2_b_giveup"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="8dp" />
+
+                <Button
+                    android:id="@+id/p2_b_giveup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:onClick="p2_giveup"
+                    android:text="포기"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toEndOf="@+id/p2_b_200"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="8dp" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/imageView37"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                app:srcCompat="@android:color/transparent" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <ScrollView
+        android:id="@+id/game_notice"
+        android:layout_width="321dp"
+        android:layout_height="458dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="#ffaaaaaa"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="right"
+                android:onClick="game_notice_out"
+                app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                app:srcCompat="@android:color/transparent" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="250dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:onClick="rule_in"
+                android:text="게임 규칙"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/p2_pic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2"
+                tools:layout_editor_absoluteY="312dp" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:srcCompat="@android:color/transparent" />
+
+            <Button
+                android:id="@+id/button10"
+                android:layout_width="250dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:onClick="button_in"
+                android:text="조작 방법"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/p2_pic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2"
+                tools:layout_editor_absoluteY="312dp" />
+
+            <ImageView
+                android:id="@+id/imageView14"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                app:srcCompat="@android:color/transparent" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/rule"
+        android:layout_width="321dp"
+        android:layout_height="458dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="#ffaaaaaa"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="right"
+                android:onClick="rule_out"
+                app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="1dp"
+                android:gravity="end"
+                android:text="1) 진행순서"
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:translationX="20dp" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="1dp"
+                android:text="- ante(참가비) "
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:translationX="30dp" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="1dp"
+                android:text="- roll (2dices) "
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:translationX="30dp" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="1dp"
+                android:text="- 1st betting "
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:translationX="30dp" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="1dp"
+                android:text="- roll (the others) "
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:translationX="30dp" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="1dp"
+                android:text="- 2nd betting "
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:translationX="30dp" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="1dp"
+                android:text="- select and roll (selected dices) "
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:translationX="30dp" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="1dp"
+                android:text="- finish "
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:translationX="30dp" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="1dp"
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="1dp"
+                android:text="2) 상세규칙 "
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:translationX="20dp" />
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="271dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="1dp"
+                android:text="- 게임 시작 전 참가비(최소판돈)을 걸어야 한다 "
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:translationX="30dp" />
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="271dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="1dp"
+                android:text="- 모든 판돈은 두 플레이어가 동일하게 걸어야 한다 "
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:translationX="30dp" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="271dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="1dp"
+                android:text="- 두 플레이어가 동일한 참가비를 내면 게임이 시작된다"
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:translationX="30dp" />
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="271dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="1dp"
+                android:text="- 순서는 항상 player1 이 먼저 roll 하고 그 다음에 player2가 roll 한다"
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:translationX="30dp" />
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="271dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="1dp"
+                android:text="- 이 때 2개의 주사위만 roll 한다. "
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:translationX="30dp" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="271dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="1dp"
+                android:text="- 두 플레이어가 한번씩 주사위를 던지고 나면 첫번째 배팅이 시작된다"
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:translationX="30dp" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="271dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="1dp"
+                android:text="- 배팅은 두 플레이어가 원하는 만큼 가능하며 두 플레이어의 최종 판돈은 동일해야한다"
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:translationX="30dp" />
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="271dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="1dp"
+                android:text="- 첫번째 배팅이 끝나면 다시 player1부터 roll 하고 그 다음에 player2가 roll 한다"
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:translationX="30dp" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="271dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="1dp"
+                android:text="- 이 때 나머지 3개의 주사위가 roll 한다 "
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:translationX="30dp" />
+
+            <TextView
+                android:id="@+id/textView39"
+                android:layout_width="271dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="1dp"
+                android:text="- 두 플레이어의 주사위 5개에 대하여 패를 확인하고 두번째 배팅을 한다."
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:translationX="30dp" />
+
+            <TextView
+                android:id="@+id/textView38"
+                android:layout_width="271dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="1dp"
+                android:text="- 배팅이 끝나면 다시 굴리고 싶은 주사위를 0~5개 선택하고 player1 부터 roll 한다"
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:translationX="30dp" />
+
+            <TextView
+                android:id="@+id/textView37"
+                android:layout_width="271dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="1dp"
+                android:text="- player2도 동일한 방법으로 0~5개의 주사위를 선택 후 roll 하면 게임이 종료된다."
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:translationX="30dp" />
+
+            <TextView
+                android:id="@+id/textView36"
+                android:layout_width="271dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="1dp"
+                android:text="- 최종 주사위 패를 확인하고 승자가 모든 판돈을 획득한다."
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:translationX="30dp" />
+
+            <TextView
+                android:id="@+id/textView35"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="1dp"
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/textView34"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/button"
+        android:layout_width="321dp"
+        android:layout_height="458dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="#ffaaaaaa"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="right"
+                android:onClick="button_out"
+                app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+
+            <ImageView
+                android:id="@+id/imageView15"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                app:srcCompat="@android:color/transparent" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="250dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                app:srcCompat="@drawable/player1dice" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                app:srcCompat="@android:color/transparent" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="player1이 게임을 진행하는 영역\nplayer1이 배팅에 참여하거나 주사위를 던질때는\n이 영역에서 조작해야한다"
+                android:textAlignment="center"
+                android:textColor="@android:color/black" />
+
+            <ImageView
+                android:id="@+id/imageView22"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                app:srcCompat="@android:color/transparent" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="250dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/player2dice" />
+
+            <ImageView
+                android:id="@+id/imageView21"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                app:srcCompat="@android:color/transparent" />
+
+            <TextView
+                android:id="@+id/textView40"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="player1이 게임을 진행하는 영역\nplayer2가 배팅에 참여하거나 주사위를 던질때는\n이 영역에서 조작해야한다"
+                android:textAlignment="center"
+                android:textColor="@android:color/black" />
+
+            <ImageView
+                android:id="@+id/imageView18"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                app:srcCompat="@android:color/transparent" />
+
+            <ImageView
+                android:id="@+id/imageView17"
+                android:layout_width="250dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/bettingbutton" />
+
+            <ImageView
+                android:id="@+id/imageView24"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                app:srcCompat="@android:color/transparent" />
+
+            <TextView
+                android:id="@+id/textView42"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="참가비 및 배팅을 할 수 있는 버튼\n여기에서 버튼을 눌러 참가비를 내야 게임이 시작된다\n포기 를 누르면 상대방이 승리하고 게임이 종료된다\n* 주의 *\n한번 건 판돈은 취소할 수 없으니 신중히 결정하자"
+                android:textAlignment="center"
+                android:textColor="@android:color/black" />
+
+            <ImageView
+                android:id="@+id/imageView16"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                app:srcCompat="@android:color/transparent" />
+
+            <ImageView
+                android:id="@+id/imageView19"
+                android:layout_width="250dp"
+                android:layout_height="180dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/bettingzone" />
+
+            <ImageView
+                android:id="@+id/imageView23"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                app:srcCompat="@android:color/transparent" />
+
+            <TextView
+                android:id="@+id/textView41"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="판돈을 확인하는 영역\n판돈 버튼을 눌러 배팅에 참여한 내역이 기록된다\n최종 판돈이 동일해야 주사위를 굴릴 수 있으니\n여기에서 확인하고 주사위를 던지자"
+                android:textAlignment="center"
+                android:textColor="@android:color/black" />
+
+            <ImageView
+                android:id="@+id/imageView20"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                app:srcCompat="@android:color/transparent" />
+
+            <ImageView
+                android:id="@+id/imageView31"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/rollbutton" />
+
+            <ImageView
+                android:id="@+id/imageView32"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                app:srcCompat="@android:color/transparent" />
+
+            <TextView
+                android:id="@+id/textView45"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="판돈이 동일하면 이 버튼을 눌러 주사위를 굴릴 수 있다\n처음에는 2개, 두번째는 나머지 3개,\n마지막에는 선택한 주사위의 값을 얻는다"
+                android:textAlignment="center"
+                android:textColor="@android:color/black" />
+
+            <ImageView
+                android:id="@+id/imageView33"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                app:srcCompat="@android:color/transparent" />
+
+            <ImageView
+                android:id="@+id/imageView28"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/dice" />
+
+            <ImageView
+                android:id="@+id/imageView29"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                app:srcCompat="@android:color/transparent" />
+
+            <TextView
+                android:id="@+id/textView44"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="주사위\nroll버튼을 누르면 값을 표시한다\n3번째 주사위를 굴릴 때에는\n변경하고싶은 주사위를 눌러 선택할 수 있다"
+                android:textAlignment="center"
+                android:textColor="@android:color/black" />
+
+            <ImageView
+                android:id="@+id/imageView30"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                app:srcCompat="@android:color/transparent" />
+
+            <ImageView
+                android:id="@+id/imageView27"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                app:srcCompat="@android:color/transparent" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
