@@ -58,10 +58,12 @@ class MainActivity : AppCompatActivity() {
         recyclerView.itemAnimator = DefaultItemAnimator()
         recyclerView.setHasFixedSize(true)
 
+        // 앱바 셋팅
         viewModel.rssChannel.observe(this, { channel ->
             if (channel != null) {
                 if (channel.title != null) {
-                    title = channel.title
+//                    title = channel.title
+                    title = "here is title"
                 }
                 adapter = ArticleAdapter(channel.articles)
                 recyclerView.adapter = adapter
@@ -72,6 +74,7 @@ class MainActivity : AppCompatActivity() {
 
         })
 
+        // ???
         viewModel.snackbar.observe(this, { value ->
             value?.let {
                 Snackbar.make(rootLayout, value, Snackbar.LENGTH_LONG).show()
@@ -79,6 +82,7 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+        //당겨서 새로고침 하는 부분
         swipeLayout.setColorSchemeResources(R.color.colorPrimary, R.color.colorPrimaryDark)
         swipeLayout.canChildScrollUp()
         swipeLayout.setOnRefreshListener {
@@ -87,6 +91,8 @@ class MainActivity : AppCompatActivity() {
             viewModel.fetchFeed(parser)
         }
 
+        //네트워크 연결이 되어있는지 확인 후 recyclerView처리
+        //네트워크 연결 안된 경우
         if (!isOnline()) {
             val builder = AlertDialog.Builder(this)
             builder.setMessage(R.string.alert_message)
@@ -97,10 +103,14 @@ class MainActivity : AppCompatActivity() {
 
             val alert = builder.create()
             alert.show()
-        } else if (isOnline()) {
+        }
+        // 네트워크 연결 되어있는 경우 => url 불러와서 피드 보이게 처리
+        else if (isOnline()) {
             viewModel.fetchFeed(parser)
         }
     }
+
+
 
 //    override fun onCreateOptionsMenu(menu: Menu): Boolean {
 //        menuInflater.inflate(R.menu.menu_main, menu)

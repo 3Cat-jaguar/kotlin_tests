@@ -13,7 +13,7 @@ import okhttp3.Request
 
 class MainViewModel : ViewModel() {
 
-    private val url = "https://www.androidauthority.com/feed"
+    private val url = "https://feeds.npr.org/1001/rss.xml"
     private lateinit var articleListLive: MutableLiveData<Channel>
 
     private val _snackbar = MutableLiveData<String>()
