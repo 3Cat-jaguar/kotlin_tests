@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">for02_AboutMe</string>
+    <string name="name">ylee</string>
+    <string name="yellow_star">Yello Star</string>
+    <string name="bio">
+        Hi My name is ylee.
+        \n\nI have 3 cats. And I love my cats.
+        \nMy cats` names are Jaguar, Oz, Leon.
+        \nJaguar is very healthy and strong.
+        \nOz is beautiful but sometimes looks like human.
+        \nLeon is toooo cute and active like dog.\n\n
+    </string>
+    <string name="what_is_your_nickname">What is your Nickname?</string>
+    <string name="done">Done</string>
+</resources>
