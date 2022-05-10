@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/for03_Trivia.iml" filepath="$PROJECT_DIR$/.idea/modules/for03_Trivia.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/for03_Trivia.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/for03_Trivia.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/for03_Trivia_Nav.iml" filepath="$PROJECT_DIR$/.idea/modules/for03_Trivia_Nav.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/for03_Trivia_Nav.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/for03_Trivia_Nav.app.iml" />
     </modules>
   </component>
 </project>
